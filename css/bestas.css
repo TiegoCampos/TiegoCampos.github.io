@@ -1,0 +1,241 @@
+/*-------GERAL-------*/
+*{
+	margin: 0 auto;
+	padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+
+/*-------MENU ESQUERDA-------*/
+span#bg_couro{
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    left: -2px;
+    background-image: url(../imgs/couro.png);
+    background-position: -40px -15px;
+    background-repeat: repeat-y;
+    z-index: 3; /*elemento do meio*/
+}
+
+div#sumario{
+	width: 250px;
+	height: 100vh;
+	position: fixed;
+    z-index: 4; /*elemento da frente*/
+    overflow: hidden;
+}
+
+header#header_menu{
+	position: fixed;
+    top: 0;
+}
+
+/*.margens{
+	width: 90%;
+}*/
+
+h1#logo{
+	background-image: url(../imgs/logo.png);
+	background-size: 250px;
+	background-repeat: no-repeat;
+	font-size: 45px; /*pra dar espaço ao height da img de fundo*/
+	text-indent: -500px; /*jogar o texto pro lado*/
+    margin-top: 10px;
+}
+
+nav#menu{
+	width: 100%;
+	margin-top: 15px;
+    margin-left: 2px;
+}
+nav#menu ul{
+	display: flex; /*display pra centralizar*/
+}
+nav#menu ul li{
+	display: inline-block; /*display pra deixar lado a lado*/
+	text-align: center;
+	filter: saturate(150%);
+}
+nav#menu ul li a{
+	padding: 6px 14px;
+	text-transform: uppercase;
+    font-size: 15px;
+	color: #ddd;
+    
+    border-radius: 3px;
+    
+    background-image: url(../imgs/bot.png);
+    background-size: cover;
+}
+nav#menu ul li a:hover{
+	border-bottom: 1px solid #8b5c2c;
+	cursor: pointer;
+	user-select: none;
+}
+nav#menu ul li a.menu_ativo{
+	/*o seletor tá no mesmo grau de especificidade 
+	do botão desativado, um grau a mais com o .menu_ativo,
+	assim, ele prioriza mostrar o background-image dessa classe
+	quando ativada/incorporada em cada botão*/
+    background-image: url(../imgs/bot_ativado.png);
+}
+nav#menu ul li a#bot_inicio{
+	filter: saturate(0%);
+}
+
+aside#bestas{ /*não fiz listas porque o "li" atrapalha a área clicável do botão ser maior*/
+	margin-top: 110px;
+    
+	overflow-x: hidden;
+	overflow-y: auto;
+    
+    /*box-shadow: -5px -5px 40px rgba(255,255,255,0.3);*/
+    
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+    height: 81vh;
+}
+aside#bestas a{
+	display: block;
+	padding: 3px 0px 4px 15px;
+
+	font-size: 16px;
+    color: #ddd;
+    
+	border-bottom: 1px solid #8b5c2c;
+}
+aside#bestas a:hover{
+    background-color: rgba(156,62,14, 0.2);
+	color: #ddd;
+}
+aside#bestas a.besta_ativa{
+    background-color: rgba(156,62,14, 0.8);
+	color: #ddd;
+}
+
+section#sobre{    
+	background-color: #e5d7a1; 
+	color: #735344;
+    box-shadow: 0px 0px 40px rgba(255,255,255,0.3);
+    border-radius: 4px;
+
+    height: 380px;
+    width: 90%;
+	margin-top: 35px;
+	padding: 5px 18px;
+
+	font-size: 12px;
+	text-align: justify;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+section#sobre p{
+	padding-top: 3px;
+	padding-bottom: 10px;
+}
+
+/*-------PRINCIPAL-------*/
+div#main{
+	background-color: #222;
+	width: calc(100% - 250px);
+	height: 1500px;
+	float: right;
+    z-index: 0; /*elemento de trás*/
+}
+
+article{
+	width: 100%;
+	min-height: 650px;
+	position: relative;
+	background-color: #ae5;
+}
+
+article div{
+	display: inline-block;
+}
+
+/*parte direita de cada article*/
+article div.besta_imagem{
+	background-color: #ddd;
+	width: 400px;
+	height: 650px;
+	overflow: hidden;
+	float: right;
+}
+.besta_imagem img{
+	height: 100%;
+}
+
+#grad_imgs{
+	width: 388px;
+	height: 100vh;
+	position: fixed;
+	right: 15px;
+	background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1));
+	z-index: 1;
+}
+
+
+/*parte esquerda de cada article*/
+article div.besta_texto{
+	background-color: #000;
+	width: calc(100% - 400px); /*100% - parte direita*/
+	height: 650px;
+	float: left;
+	display: flex; /*vai alinhar verticalmente elementos filhos*/
+    padding: 20px;
+}
+div.besta_texto div.besta_texto_caixa{
+	width: 100%;
+    margin: auto 10px;
+    color: #ddd;
+}
+div.besta_texto_caixa h1{
+    margin: 0px 0px 15px;
+    font-size: 50px;
+    text-align: right
+}
+div.besta_texto_caixa h2{
+    font-size: 20px;
+}
+div.besta_texto_caixa p{
+    text-align: justify;
+    text-indent: 15px;
+    margin-left: 15px;
+    margin: 5px 0;
+}
+
+footer{
+	background-color: #222;
+	width: 100%;
+	height: 30px;
+	padding-right: 250px;
+	padding-top: 8px;
+	position: fixed;
+	bottom: 0;
+	z-index: 2;
+
+	text-align: center;
+	font-size: 12px;
+	color: #ccc;
+}
+
+span#fade{
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	z-index: 100; /*vai ser alterado no js*/
+	position: fixed;
+
+	opacity: 1; /*vai ser alterado no js*/
+	transition: 1.5s;
+}

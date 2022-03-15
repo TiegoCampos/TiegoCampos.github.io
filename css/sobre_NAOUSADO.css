@@ -1,0 +1,111 @@
+/*-------GERAL-------*/
+*{
+	margin: 0 auto;
+	padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+
+/*-------MENU ESQUERDA-------*/
+span#bg_couro{
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    left: -2px;
+    background-image: url(./imgs/couro.png);
+    background-position: -40px -15px;
+    background-repeat: repeat-y;
+    z-index: 3; /*elemento do meio*/
+}
+
+div#sumario{
+	width: 250px;
+	height: 100vh;
+	position: fixed;
+    z-index: 4; /*elemento da frente*/
+}
+/*.margens{
+	width: 90%;
+}*/
+
+h1#logo{
+	background-image: url(./imgs/logo.png);
+	background-size: 250px;
+	background-repeat: no-repeat;
+	font-size: 45px; /*pra dar espaço ao height da img de fundo*/
+	text-indent: -500px; /*jogar o texto pro lado*/
+    margin-top: 10px;
+}
+
+nav#menu{
+	width: 100%;
+	margin-top: 15px;
+    margin-left: 2px;
+}
+nav#menu ul{
+	display: flex; /*display pra centralizar*/
+}
+nav#menu ul li{
+	display: inline-block; /*display pra deixar lado a lado*/
+	text-align: center;
+}
+nav#menu ul li a{
+	padding: 6px 14px;
+	text-transform: uppercase;
+    font-size: 15px;
+	color: #ddd;
+    
+    border-radius: 3px;
+    
+    background-image: url(./imgs/bot.png);
+    background-size: cover;
+}
+nav#menu ul li a:hover{
+	border-bottom: 1px solid #8b5c2c;
+}
+nav#menu ul li a#menu_ativo{
+    background-image: url(./imgs/bot_ativado.png);
+}
+
+section#sobre{    
+	background-color: #e5d7a1; 
+	color: #735344;
+    box-shadow: 0px 0px 40px rgba(255,255,255,0.3);
+    border-radius: 4px;
+
+    height: 350px;
+    width: 90%;
+	margin-top: 35px;
+	padding: 18px;
+
+	font-size: 12px;
+	text-align: justify;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+section#sobre h3{
+}
+section#sobre p{
+	padding-top: 3px;
+	padding-bottom: 10px;
+}
+
+footer{
+	background-color: #222;
+	width: 100%;
+	height: 30px;
+	position: fixed;
+	bottom: 0;
+	z-index: 2;
+	text-align: center;
+	padding-top: 8px;
+	font-size: 12px;
+	color: #ccc;
+}
